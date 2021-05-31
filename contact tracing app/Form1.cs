@@ -17,5 +17,9 @@ namespace contact_tracing_app
             InitializeComponent();
         }
 
+        private void detail_groupbox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
