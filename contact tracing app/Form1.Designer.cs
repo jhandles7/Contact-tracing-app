@@ -228,6 +228,7 @@ namespace contact_tracing_app
             this.Save_btn.TabIndex = 3;
             this.Save_btn.Text = "Save Details";
             this.Save_btn.UseVisualStyleBackColor = true;
+            this.Save_btn.Click += new System.EventHandler(this.Save_btn_Click);
             // 
             // View_btn
             // 
@@ -237,6 +238,7 @@ namespace contact_tracing_app
             this.View_btn.TabIndex = 4;
             this.View_btn.Text = "View Lists";
             this.View_btn.UseVisualStyleBackColor = true;
+            this.View_btn.Click += new System.EventHandler(this.View_btn_Click);
             // 
             // Form1
             // 
@@ -255,6 +257,7 @@ namespace contact_tracing_app
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Contact Tracing Form";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.detail_groupbox.ResumeLayout(false);
             this.detail_groupbox.PerformLayout();
             this.ResumeLayout(false);

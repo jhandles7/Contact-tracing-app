@@ -35,7 +35,7 @@ namespace contact_tracing_app
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 350);
+            this.ClientSize = new System.Drawing.Size(452, 426);
             this.Name = "Form2";
             this.Text = "Form2";
             this.ResumeLayout(false);
