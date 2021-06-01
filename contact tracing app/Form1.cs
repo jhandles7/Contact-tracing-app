@@ -29,10 +29,12 @@ namespace contact_tracing_app
         {
             
             StreamWriter ListFile;
-            ListFile = File.AppendText("CustomerList.txt");
-
-            ListFile.WriteLine(Fname_txtbox.Text);
-            ListFile.WriteLine(Lname_txtbox.Text);
+            
+            string date_today = File.GetLastWriteTime("CustomerList.txt").ToLongDateString();
+            ListFile = File.AppendText(date_today + ".txt");
+            ListFile.WriteLine("=================================================");
+            ListFile.WriteLine("First Name: " + Fname_txtbox.Text);
+            ListFile.WriteLine("Last Name: " + Lname_txtbox.Text);
 
             ListFile.Close();
 
