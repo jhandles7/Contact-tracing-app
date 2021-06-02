@@ -13,16 +13,18 @@ namespace contact_tracing_app
     public partial class Form2 : Form
     {
         public static Form2 instance;
+        public ListBox cust_listbx;
         public Form2()
         {
             InitializeComponent();
             instance = this;
+            cust_listbx = Customer_List;
         }
 
-        private void btn_OK_Click(object sender, EventArgs e)
+
+        private void Form2_Load(object sender, EventArgs e)
         {
-            string selected_date = select_calendar.Value.ToLongDateString();
-            
+
         }
     }
 }

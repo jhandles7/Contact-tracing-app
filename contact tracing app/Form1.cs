@@ -67,7 +67,7 @@ namespace contact_tracing_app
             inputfile = File.OpenText(selected_date + ".txt");
             while (!inputfile.EndOfStream)
             {
-                MessageBox.Show(inputfile.ReadLine());
+                Form2.instance.cust_listbx.Items.Add(inputfile.ReadLine());
             }
         }
 

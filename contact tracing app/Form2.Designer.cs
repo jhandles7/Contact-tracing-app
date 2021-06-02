@@ -54,6 +54,7 @@ namespace contact_tracing_app
             this.Controls.Add(this.Customer_List);
             this.Name = "Form2";
             this.Text = "List of Customer";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }
