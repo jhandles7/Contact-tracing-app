@@ -49,6 +49,8 @@ namespace contact_tracing_app
             this.label_Name = new System.Windows.Forms.Label();
             this.Save_btn = new System.Windows.Forms.Button();
             this.View_btn = new System.Windows.Forms.Button();
+            this.label_calendar = new System.Windows.Forms.Label();
+            this.select_calendar = new System.Windows.Forms.DateTimePicker();
             this.detail_groupbox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +78,7 @@ namespace contact_tracing_app
             // 
             this.detail_groupbox.BackColor = System.Drawing.Color.Transparent;
             this.detail_groupbox.Controls.Add(this.temp_txtbox);
+            this.detail_groupbox.Controls.Add(this.Save_btn);
             this.detail_groupbox.Controls.Add(this.temp_label);
             this.detail_groupbox.Controls.Add(this.number_txtbox);
             this.detail_groupbox.Controls.Add(this.Number_label);
@@ -92,7 +95,7 @@ namespace contact_tracing_app
             this.detail_groupbox.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.detail_groupbox.Location = new System.Drawing.Point(12, 66);
             this.detail_groupbox.Name = "detail_groupbox";
-            this.detail_groupbox.Size = new System.Drawing.Size(428, 295);
+            this.detail_groupbox.Size = new System.Drawing.Size(428, 333);
             this.detail_groupbox.TabIndex = 2;
             this.detail_groupbox.TabStop = false;
             this.detail_groupbox.Enter += new System.EventHandler(this.detail_groupbox_Enter);
@@ -222,9 +225,9 @@ namespace contact_tracing_app
             // 
             // Save_btn
             // 
-            this.Save_btn.Location = new System.Drawing.Point(53, 367);
+            this.Save_btn.Location = new System.Drawing.Point(177, 295);
             this.Save_btn.Name = "Save_btn";
-            this.Save_btn.Size = new System.Drawing.Size(127, 37);
+            this.Save_btn.Size = new System.Drawing.Size(62, 37);
             this.Save_btn.TabIndex = 3;
             this.Save_btn.Text = "Save Details";
             this.Save_btn.UseVisualStyleBackColor = true;
@@ -232,13 +235,34 @@ namespace contact_tracing_app
             // 
             // View_btn
             // 
-            this.View_btn.Location = new System.Drawing.Point(204, 367);
+            this.View_btn.Location = new System.Drawing.Point(295, 424);
             this.View_btn.Name = "View_btn";
-            this.View_btn.Size = new System.Drawing.Size(127, 37);
+            this.View_btn.Size = new System.Drawing.Size(92, 26);
             this.View_btn.TabIndex = 4;
             this.View_btn.Text = "View Lists";
             this.View_btn.UseVisualStyleBackColor = true;
             this.View_btn.Click += new System.EventHandler(this.View_btn_Click);
+            // 
+            // label_calendar
+            // 
+            this.label_calendar.AutoSize = true;
+            this.label_calendar.BackColor = System.Drawing.Color.White;
+            this.label_calendar.Font = new System.Drawing.Font("Snap ITC", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_calendar.ForeColor = System.Drawing.Color.BlueViolet;
+            this.label_calendar.Location = new System.Drawing.Point(12, 402);
+            this.label_calendar.Name = "label_calendar";
+            this.label_calendar.Size = new System.Drawing.Size(130, 22);
+            this.label_calendar.TabIndex = 5;
+            this.label_calendar.Text = "Select Date: ";
+            // 
+            // select_calendar
+            // 
+            this.select_calendar.CustomFormat = "dddd, MMMM dd, yyyy";
+            this.select_calendar.Location = new System.Drawing.Point(55, 427);
+            this.select_calendar.Name = "select_calendar";
+            this.select_calendar.Size = new System.Drawing.Size(229, 23);
+            this.select_calendar.TabIndex = 6;
+            this.select_calendar.Value = new System.DateTime(2021, 6, 2, 0, 0, 0, 0);
             // 
             // Form1
             // 
@@ -247,9 +271,10 @@ namespace contact_tracing_app
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(452, 426);
+            this.ClientSize = new System.Drawing.Size(452, 473);
+            this.Controls.Add(this.select_calendar);
+            this.Controls.Add(this.label_calendar);
             this.Controls.Add(this.View_btn);
-            this.Controls.Add(this.Save_btn);
             this.Controls.Add(this.detail_groupbox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -286,6 +311,8 @@ namespace contact_tracing_app
         private System.Windows.Forms.Label Address_label;
         private System.Windows.Forms.Button Save_btn;
         private System.Windows.Forms.Button View_btn;
+        private System.Windows.Forms.Label label_calendar;
+        private System.Windows.Forms.DateTimePicker select_calendar;
     }
 }
 

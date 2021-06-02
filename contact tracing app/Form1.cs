@@ -13,9 +13,11 @@ namespace contact_tracing_app
 {
     public partial class Form1 : Form
     {
+        public static Form1 instance;
         public Form1()
         {
             InitializeComponent();
+            instance = this;
         }
 
         private void detail_groupbox_Enter(object sender, EventArgs e)
@@ -31,8 +33,10 @@ namespace contact_tracing_app
             StreamWriter ListFile;
 
             string date_today = DateTime.Now.ToLongDateString();
+            string time_enter = DateTime.Now.ToString("h:mm:ss tt");
+
             ListFile = File.AppendText(date_today + ".txt");
-            ListFile.WriteLine("=================================================");
+            ListFile.WriteLine("================" + time_enter + "===================");
             ListFile.WriteLine("First Name: " + Fname_txtbox.Text);
             ListFile.WriteLine("Last Name: " + Lname_txtbox.Text);
             ListFile.WriteLine("Age:" + age_txtbox.Text);
@@ -54,7 +58,7 @@ namespace contact_tracing_app
         private void View_btn_Click(object sender, EventArgs e)
         {
             Form2 listform = new Form2();
-            listform.ShowDialog();
+            listform.Show();
         }
 
         private void Form1_Load(object sender, EventArgs e)
