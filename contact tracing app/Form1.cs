@@ -53,7 +53,8 @@ namespace contact_tracing_app
 
         private void View_btn_Click(object sender, EventArgs e)
         {
-
+            Form2 listform = new Form2();
+            listform.ShowDialog();
         }
 
         private void Form1_Load(object sender, EventArgs e)
