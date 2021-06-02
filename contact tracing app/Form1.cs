@@ -59,6 +59,16 @@ namespace contact_tracing_app
         {
             Form2 listform = new Form2();
             listform.Show();
+
+            string selected_date = select_calendar.Value.ToLongDateString();
+
+            //Form2.instance.cust_listbx = 
+            StreamReader inputfile;
+            inputfile = File.OpenText(selected_date + ".txt");
+            while (!inputfile.EndOfStream)
+            {
+                MessageBox.Show(inputfile.ReadLine());
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

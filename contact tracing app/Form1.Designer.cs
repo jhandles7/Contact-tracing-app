@@ -262,7 +262,7 @@ namespace contact_tracing_app
             this.select_calendar.Name = "select_calendar";
             this.select_calendar.Size = new System.Drawing.Size(229, 23);
             this.select_calendar.TabIndex = 6;
-            this.select_calendar.Value = new System.DateTime(2021, 6, 2, 0, 0, 0, 0);
+            this.select_calendar.Value = new System.DateTime(2021, 6, 2, 13, 41, 53, 0);
             // 
             // Form1
             // 
