@@ -33,7 +33,7 @@ namespace contact_tracing_app
             StreamWriter ListFile;
 
             string date_today = DateTime.Now.ToLongDateString();
-            string time_enter = DateTime.Now.ToString("h:mm:ss tt");
+            string time_enter = DateTime.Now.ToString("h:mm tt");
 
             ListFile = File.AppendText(date_today + ".txt");
             ListFile.WriteLine("================" + time_enter + "===================");
@@ -62,12 +62,18 @@ namespace contact_tracing_app
 
             string selected_date = select_calendar.Value.ToLongDateString();
 
-            //Form2.instance.cust_listbx = 
-            StreamReader inputfile;
-            inputfile = File.OpenText(selected_date + ".txt");
-            while (!inputfile.EndOfStream)
+            try
             {
-                Form2.instance.cust_listbx.Items.Add(inputfile.ReadLine());
+                StreamReader inputfile;
+                inputfile = File.OpenText(selected_date + ".txt");
+                while (!inputfile.EndOfStream)
+                {
+                    Form2.instance.cust_listbx.Items.Add(inputfile.ReadLine());
+                }
+            }
+            catch (Exception)
+            {
+                Form2.instance.cust_listbx.Items.Add("No Available Data for " + selected_date);
             }
         }
 
