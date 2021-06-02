@@ -29,12 +29,15 @@ namespace contact_tracing_app
         {
             
             StreamWriter ListFile;
-            
-            string date_today = File.GetLastWriteTime("CustomerList.txt").ToLongDateString();
+
+            string date_today = DateTime.Now.ToLongDateString();
             ListFile = File.AppendText(date_today + ".txt");
             ListFile.WriteLine("=================================================");
             ListFile.WriteLine("First Name: " + Fname_txtbox.Text);
             ListFile.WriteLine("Last Name: " + Lname_txtbox.Text);
+            ListFile.WriteLine("Age:" + age_txtbox.Text);
+            ListFile.WriteLine("Adress: " + address_txtbox.Text);
+            ListFile.WriteLine("Temperature: " + temp_txtbox.Text);
 
             ListFile.Close();
 
@@ -50,10 +53,7 @@ namespace contact_tracing_app
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            StreamWriter ListFile;
-            ListFile = File.AppendText("CustomerList.txt");
-            ListFile.WriteLine("=============================================");
-            ListFile.Close();
+            
         }
     }
 }
