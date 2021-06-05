@@ -33,11 +33,13 @@ namespace contact_tracing_app
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.detail_groupbox = new System.Windows.Forms.GroupBox();
-            this.temp_txtbox = new System.Windows.Forms.TextBox();
+            this.temp_UpDown = new System.Windows.Forms.NumericUpDown();
+            this.age_num_up_down = new System.Windows.Forms.NumericUpDown();
             this.Save_btn = new System.Windows.Forms.Button();
             this.temp_label = new System.Windows.Forms.Label();
             this.number_txtbox = new System.Windows.Forms.TextBox();
             this.Number_label = new System.Windows.Forms.Label();
+            this.address_txtbox = new System.Windows.Forms.TextBox();
             this.Address_label = new System.Windows.Forms.Label();
             this.Age_label = new System.Windows.Forms.Label();
             this.Lname_txtbox = new System.Windows.Forms.TextBox();
@@ -49,9 +51,8 @@ namespace contact_tracing_app
             this.View_btn = new System.Windows.Forms.Button();
             this.label_calendar = new System.Windows.Forms.Label();
             this.select_calendar = new System.Windows.Forms.DateTimePicker();
-            this.address_txtbox = new System.Windows.Forms.TextBox();
-            this.age_num_up_down = new System.Windows.Forms.NumericUpDown();
             this.detail_groupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temp_UpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.age_num_up_down)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,8 +79,8 @@ namespace contact_tracing_app
             // detail_groupbox
             // 
             this.detail_groupbox.BackColor = System.Drawing.Color.Transparent;
+            this.detail_groupbox.Controls.Add(this.temp_UpDown);
             this.detail_groupbox.Controls.Add(this.age_num_up_down);
-            this.detail_groupbox.Controls.Add(this.temp_txtbox);
             this.detail_groupbox.Controls.Add(this.Save_btn);
             this.detail_groupbox.Controls.Add(this.temp_label);
             this.detail_groupbox.Controls.Add(this.number_txtbox);
@@ -101,12 +102,30 @@ namespace contact_tracing_app
             this.detail_groupbox.TabStop = false;
             this.detail_groupbox.Enter += new System.EventHandler(this.detail_groupbox_Enter);
             // 
-            // temp_txtbox
+            // temp_UpDown
             // 
-            this.temp_txtbox.Location = new System.Drawing.Point(119, 261);
-            this.temp_txtbox.Name = "temp_txtbox";
-            this.temp_txtbox.Size = new System.Drawing.Size(163, 28);
-            this.temp_txtbox.TabIndex = 13;
+            this.temp_UpDown.DecimalPlaces = 1;
+            this.temp_UpDown.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.temp_UpDown.Location = new System.Drawing.Point(119, 257);
+            this.temp_UpDown.Name = "temp_UpDown";
+            this.temp_UpDown.Size = new System.Drawing.Size(134, 28);
+            this.temp_UpDown.TabIndex = 15;
+            this.temp_UpDown.Value = new decimal(new int[] {
+            35,
+            0,
+            0,
+            0});
+            // 
+            // age_num_up_down
+            // 
+            this.age_num_up_down.Location = new System.Drawing.Point(119, 156);
+            this.age_num_up_down.Name = "age_num_up_down";
+            this.age_num_up_down.Size = new System.Drawing.Size(80, 28);
+            this.age_num_up_down.TabIndex = 14;
             // 
             // Save_btn
             // 
@@ -144,6 +163,13 @@ namespace contact_tracing_app
             this.Number_label.Size = new System.Drawing.Size(80, 21);
             this.Number_label.TabIndex = 10;
             this.Number_label.Text = "Number: ";
+            // 
+            // address_txtbox
+            // 
+            this.address_txtbox.Location = new System.Drawing.Point(119, 190);
+            this.address_txtbox.Name = "address_txtbox";
+            this.address_txtbox.Size = new System.Drawing.Size(291, 28);
+            this.address_txtbox.TabIndex = 9;
             // 
             // Address_label
             // 
@@ -251,20 +277,6 @@ namespace contact_tracing_app
             this.select_calendar.TabIndex = 6;
             this.select_calendar.Value = new System.DateTime(2021, 6, 2, 13, 41, 53, 0);
             // 
-            // address_txtbox
-            // 
-            this.address_txtbox.Location = new System.Drawing.Point(119, 190);
-            this.address_txtbox.Name = "address_txtbox";
-            this.address_txtbox.Size = new System.Drawing.Size(291, 28);
-            this.address_txtbox.TabIndex = 9;
-            // 
-            // age_num_up_down
-            // 
-            this.age_num_up_down.Location = new System.Drawing.Point(119, 156);
-            this.age_num_up_down.Name = "age_num_up_down";
-            this.age_num_up_down.Size = new System.Drawing.Size(80, 28);
-            this.age_num_up_down.TabIndex = 14;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -286,6 +298,7 @@ namespace contact_tracing_app
             this.Load += new System.EventHandler(this.Form1_Load);
             this.detail_groupbox.ResumeLayout(false);
             this.detail_groupbox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.temp_UpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.age_num_up_down)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -304,7 +317,6 @@ namespace contact_tracing_app
         private System.Windows.Forms.TextBox Fname_txtbox;
         private System.Windows.Forms.Label fname_label;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox temp_txtbox;
         private System.Windows.Forms.Label temp_label;
         private System.Windows.Forms.TextBox number_txtbox;
         private System.Windows.Forms.Label Number_label;
@@ -315,6 +327,7 @@ namespace contact_tracing_app
         private System.Windows.Forms.DateTimePicker select_calendar;
         private System.Windows.Forms.NumericUpDown age_num_up_down;
         private System.Windows.Forms.TextBox address_txtbox;
+        private System.Windows.Forms.NumericUpDown temp_UpDown;
     }
 }
 
