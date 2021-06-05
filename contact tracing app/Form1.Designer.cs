@@ -34,12 +34,11 @@ namespace contact_tracing_app
             this.label2 = new System.Windows.Forms.Label();
             this.detail_groupbox = new System.Windows.Forms.GroupBox();
             this.temp_txtbox = new System.Windows.Forms.TextBox();
+            this.Save_btn = new System.Windows.Forms.Button();
             this.temp_label = new System.Windows.Forms.Label();
             this.number_txtbox = new System.Windows.Forms.TextBox();
             this.Number_label = new System.Windows.Forms.Label();
-            this.address_txtbox = new System.Windows.Forms.TextBox();
             this.Address_label = new System.Windows.Forms.Label();
-            this.age_txtbox = new System.Windows.Forms.TextBox();
             this.Age_label = new System.Windows.Forms.Label();
             this.Lname_txtbox = new System.Windows.Forms.TextBox();
             this.Lname_label = new System.Windows.Forms.Label();
@@ -47,11 +46,13 @@ namespace contact_tracing_app
             this.fname_label = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_Name = new System.Windows.Forms.Label();
-            this.Save_btn = new System.Windows.Forms.Button();
             this.View_btn = new System.Windows.Forms.Button();
             this.label_calendar = new System.Windows.Forms.Label();
             this.select_calendar = new System.Windows.Forms.DateTimePicker();
+            this.address_txtbox = new System.Windows.Forms.TextBox();
+            this.age_num_up_down = new System.Windows.Forms.NumericUpDown();
             this.detail_groupbox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.age_num_up_down)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,6 +78,7 @@ namespace contact_tracing_app
             // detail_groupbox
             // 
             this.detail_groupbox.BackColor = System.Drawing.Color.Transparent;
+            this.detail_groupbox.Controls.Add(this.age_num_up_down);
             this.detail_groupbox.Controls.Add(this.temp_txtbox);
             this.detail_groupbox.Controls.Add(this.Save_btn);
             this.detail_groupbox.Controls.Add(this.temp_label);
@@ -84,7 +86,6 @@ namespace contact_tracing_app
             this.detail_groupbox.Controls.Add(this.Number_label);
             this.detail_groupbox.Controls.Add(this.address_txtbox);
             this.detail_groupbox.Controls.Add(this.Address_label);
-            this.detail_groupbox.Controls.Add(this.age_txtbox);
             this.detail_groupbox.Controls.Add(this.Age_label);
             this.detail_groupbox.Controls.Add(this.Lname_txtbox);
             this.detail_groupbox.Controls.Add(this.Lname_label);
@@ -106,6 +107,16 @@ namespace contact_tracing_app
             this.temp_txtbox.Name = "temp_txtbox";
             this.temp_txtbox.Size = new System.Drawing.Size(163, 28);
             this.temp_txtbox.TabIndex = 13;
+            // 
+            // Save_btn
+            // 
+            this.Save_btn.Location = new System.Drawing.Point(177, 295);
+            this.Save_btn.Name = "Save_btn";
+            this.Save_btn.Size = new System.Drawing.Size(62, 37);
+            this.Save_btn.TabIndex = 3;
+            this.Save_btn.Text = "Save Details";
+            this.Save_btn.UseVisualStyleBackColor = true;
+            this.Save_btn.Click += new System.EventHandler(this.Save_btn_Click);
             // 
             // temp_label
             // 
@@ -134,13 +145,6 @@ namespace contact_tracing_app
             this.Number_label.TabIndex = 10;
             this.Number_label.Text = "Number: ";
             // 
-            // address_txtbox
-            // 
-            this.address_txtbox.Location = new System.Drawing.Point(119, 190);
-            this.address_txtbox.Name = "address_txtbox";
-            this.address_txtbox.Size = new System.Drawing.Size(291, 28);
-            this.address_txtbox.TabIndex = 9;
-            // 
             // Address_label
             // 
             this.Address_label.AutoSize = true;
@@ -150,13 +154,6 @@ namespace contact_tracing_app
             this.Address_label.Size = new System.Drawing.Size(74, 21);
             this.Address_label.TabIndex = 8;
             this.Address_label.Text = "Address:";
-            // 
-            // age_txtbox
-            // 
-            this.age_txtbox.Location = new System.Drawing.Point(119, 156);
-            this.age_txtbox.Name = "age_txtbox";
-            this.age_txtbox.Size = new System.Drawing.Size(163, 28);
-            this.age_txtbox.TabIndex = 7;
             // 
             // Age_label
             // 
@@ -223,16 +220,6 @@ namespace contact_tracing_app
             this.label_Name.TabIndex = 0;
             this.label_Name.Text = "Name: ";
             // 
-            // Save_btn
-            // 
-            this.Save_btn.Location = new System.Drawing.Point(177, 295);
-            this.Save_btn.Name = "Save_btn";
-            this.Save_btn.Size = new System.Drawing.Size(62, 37);
-            this.Save_btn.TabIndex = 3;
-            this.Save_btn.Text = "Save Details";
-            this.Save_btn.UseVisualStyleBackColor = true;
-            this.Save_btn.Click += new System.EventHandler(this.Save_btn_Click);
-            // 
             // View_btn
             // 
             this.View_btn.Location = new System.Drawing.Point(295, 424);
@@ -264,6 +251,20 @@ namespace contact_tracing_app
             this.select_calendar.TabIndex = 6;
             this.select_calendar.Value = new System.DateTime(2021, 6, 2, 13, 41, 53, 0);
             // 
+            // address_txtbox
+            // 
+            this.address_txtbox.Location = new System.Drawing.Point(119, 190);
+            this.address_txtbox.Name = "address_txtbox";
+            this.address_txtbox.Size = new System.Drawing.Size(291, 28);
+            this.address_txtbox.TabIndex = 9;
+            // 
+            // age_num_up_down
+            // 
+            this.age_num_up_down.Location = new System.Drawing.Point(119, 156);
+            this.age_num_up_down.Name = "age_num_up_down";
+            this.age_num_up_down.Size = new System.Drawing.Size(80, 28);
+            this.age_num_up_down.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -285,6 +286,7 @@ namespace contact_tracing_app
             this.Load += new System.EventHandler(this.Form1_Load);
             this.detail_groupbox.ResumeLayout(false);
             this.detail_groupbox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.age_num_up_down)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,7 +298,6 @@ namespace contact_tracing_app
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox detail_groupbox;
         private System.Windows.Forms.Label label_Name;
-        private System.Windows.Forms.TextBox age_txtbox;
         private System.Windows.Forms.Label Age_label;
         private System.Windows.Forms.TextBox Lname_txtbox;
         private System.Windows.Forms.Label Lname_label;
@@ -307,12 +308,13 @@ namespace contact_tracing_app
         private System.Windows.Forms.Label temp_label;
         private System.Windows.Forms.TextBox number_txtbox;
         private System.Windows.Forms.Label Number_label;
-        private System.Windows.Forms.TextBox address_txtbox;
         private System.Windows.Forms.Label Address_label;
         private System.Windows.Forms.Button Save_btn;
         private System.Windows.Forms.Button View_btn;
         private System.Windows.Forms.Label label_calendar;
         private System.Windows.Forms.DateTimePicker select_calendar;
+        private System.Windows.Forms.NumericUpDown age_num_up_down;
+        private System.Windows.Forms.TextBox address_txtbox;
     }
 }
 

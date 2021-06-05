@@ -39,7 +39,7 @@ namespace contact_tracing_app
             ListFile.WriteLine("================" + time_enter + "===================");
             ListFile.WriteLine("First Name: " + Fname_txtbox.Text);
             ListFile.WriteLine("Last Name: " + Lname_txtbox.Text);
-            ListFile.WriteLine("Age:" + age_txtbox.Text);
+            ListFile.WriteLine("Age:" + age_num_up_down.Value.ToString());
             ListFile.WriteLine("Contact Number: " + number_txtbox.Text);
             ListFile.WriteLine("Adress: " + address_txtbox.Text);
             ListFile.WriteLine("Temperature: " + temp_txtbox.Text);
@@ -48,7 +48,7 @@ namespace contact_tracing_app
 
             Fname_txtbox.Text = "";
             Lname_txtbox.Text = "";
-            age_txtbox.Text = "";
+            age_num_up_down.Value = 0;
             number_txtbox.Text = "";
             address_txtbox.Text = "";
             temp_txtbox.Text = "";
